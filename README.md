@@ -11,4 +11,4 @@ If this option does not work, check if the folder is on the desktop. If this doe
   4)javac QuestionLibrary.java
   5)javac QAProgram.java
   6)java QAProgram
-  7) then input: java QAProgram and the program will start in the console.
+  7)then input: java QAProgram and the program will start in the console.
