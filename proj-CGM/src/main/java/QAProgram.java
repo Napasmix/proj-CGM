@@ -34,9 +34,9 @@ public class QAProgram {
     }
     private static void askQuestion(Scanner scanner, QuestionLibrary questionLibrary) {
         System.out.println("Enter your question:");
-        String question = scanner.nextLine().trim(); // Введене питання без знаку питання
+        String question = scanner.nextLine().trim(); 
         
-        // Перевірка, чи питання закінчується знаком питання
+        
         if (!question.endsWith("?")) {
             System.out.println("Incorrect format. The entered data is not a question.");
             return;
@@ -45,17 +45,17 @@ public class QAProgram {
         boolean questionFound = false;
     
         for (String key : questionLibrary.getAllQuestionsAndAnswers().keySet()) {
-            // Порівнюємо частково, без знаку "?"
+            
             if (key.trim().toLowerCase().startsWith(question.toLowerCase())) {
                 questionFound = true;
                 
-                // Виводимо питання
+            
                 System.out.println("Question: " + key);
-                // Виводимо відповіді
+              
                 System.out.println("Answers:");
                 String[] answers = questionLibrary.getAnswers(key);
                 for (String answer : answers) {
-                    System.out.println("- " + answer); // Виводимо кожну відповідь з префіксом "-"
+                    System.out.println("- " + answer); 
                 }
                 break;
             }
@@ -87,14 +87,14 @@ private static void addQuestionAndAnswers(Scanner scanner, QuestionLibrary quest
         return;
     }
 
-    // Перевірка довжини питання
-    String question = parts[0].trim() + "?"; // Додавання знаку питання до питання
+    
+    String question = parts[0].trim() + "?"; 
     if (question.length() > MAX_QUESTION_LENGTH) {
         System.out.println("Question exceeds maximum length of " + MAX_QUESTION_LENGTH + " characters.");
         return;
     }
 
-    // Перевірка довжини відповідей
+   
     String[] answers = parts[1].trim().split("\" \"");
     for (int i = 0; i < answers.length; i++) {
         answers[i] = answers[i].replaceAll("\"", "");
